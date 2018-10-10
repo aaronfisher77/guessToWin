@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +12,309 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="guessToWin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess - To - Win!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EFd-Yp-lv1">
+                                <rect key="frame" x="67" y="38" width="241" height="299.5"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="87"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" red="0.42636587368719325" green="1" blue="0.38765657884502058" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="37" translatesAutoresizingMaskIntoConstraints="NO" id="yyI-ie-JG5">
+                                <rect key="frame" x="19" y="363.5" width="337.5" height="233.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9CV-PT-dvb">
+                                        <rect key="frame" x="8" y="0.0" width="321" height="128.5"/>
+                                        <color key="backgroundColor" red="0.53821243519999995" green="0.53656055650000001" blue="0.5311736266" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="77"/>
+                                        <state key="normal" title="Play">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="1qg-Jk-pcj" kind="show" id="LoO-xh-hFW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ha-c9-xBd">
+                                        <rect key="frame" x="67.5" y="165.5" width="202.5" height="68"/>
+                                        <color key="backgroundColor" red="0.53821243519999995" green="0.53656055650000001" blue="0.5311736266" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
+                                        <state key="normal" title="How To Play">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="79n-94-SPH" kind="show" id="Uay-zW-XLO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="9CV-PT-dvb" firstAttribute="height" secondItem="yyI-ie-JG5" secondAttribute="height" multiplier="0.55" id="0Du-jf-0AX"/>
+                                    <constraint firstItem="9Ha-c9-xBd" firstAttribute="width" secondItem="yyI-ie-JG5" secondAttribute="width" multiplier="0.6" id="Gbt-0p-HUJ"/>
+                                    <constraint firstItem="9CV-PT-dvb" firstAttribute="width" secondItem="yyI-ie-JG5" secondAttribute="width" multiplier="0.95" id="x8Z-tr-9yN"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.26235479116439819" green="0.48153883218765259" blue="0.21955254673957825" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="EFd-Yp-lv1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="18" id="0FV-v7-5Si"/>
+                            <constraint firstItem="yyI-ie-JG5" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="5VW-Zc-xvv"/>
+                            <constraint firstItem="EFd-Yp-lv1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="Fis-OM-oNz"/>
+                            <constraint firstItem="EFd-Yp-lv1" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="RdM-ic-hiF"/>
+                            <constraint firstItem="yyI-ie-JG5" firstAttribute="top" secondItem="EFd-Yp-lv1" secondAttribute="bottom" constant="26" id="m0Z-nh-eJC"/>
+                            <constraint firstItem="yyI-ie-JG5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sAz-ln-pMO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="yyI-ie-JG5" secondAttribute="bottom" constant="70" id="uO6-n2-NUG"/>
+                            <constraint firstItem="yyI-ie-JG5" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.35" id="w9R-03-EhN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-938.39999999999998" y="-0.44977511244377816"/>
+        </scene>
+        <!--Game-->
+        <scene sceneID="FmE-Jg-rai">
+            <objects>
+                <viewController id="Cty-sy-d1U" customClass="Game" customModule="guessToWin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qrI-S2-jFb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geP-zP-C35">
+                                <rect key="frame" x="16" y="20" width="59" height="30"/>
+                                <color key="backgroundColor" red="0.53821243519999995" green="0.53656055650000001" blue="0.5311736266" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="1qg-Jk-pcj" kind="show" id="ImO-EC-0d5"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess - To - Win!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rqM-nn-gQb">
+                                <rect key="frame" x="105" y="20" width="183" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="fxX-WO-fK8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="27"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" red="0.42636587370000001" green="1" blue="0.38765657879999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess the right number and you win!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="xzE-Ez-6pE">
+                                <rect key="frame" x="45.5" y="82" width="284" height="21"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" red="0.42636587370000001" green="1" blue="0.38765657879999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E1D-Bf-1co">
+                                <rect key="frame" x="134" y="210" width="107" height="88"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="77"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Guess the right number and you win!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="Hjv-Ba-bSq">
+                                <rect key="frame" x="45" y="134" width="284" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" red="0.42636587370000001" green="1" blue="0.38765657879999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.51321160793304443" green="0.75685971975326538" blue="0.45877158641815186" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="f2p-WO-9Uu" firstAttribute="bottom" secondItem="E1D-Bf-1co" secondAttribute="bottom" constant="369" id="3eh-zS-YFb"/>
+                            <constraint firstItem="f2p-WO-9Uu" firstAttribute="trailing" secondItem="geP-zP-C35" secondAttribute="trailing" constant="300" id="6th-gC-LE8"/>
+                            <constraint firstItem="f2p-WO-9Uu" firstAttribute="bottom" secondItem="xzE-Ez-6pE" secondAttribute="bottom" constant="564" id="89D-NN-xtv"/>
+                            <constraint firstItem="f2p-WO-9Uu" firstAttribute="bottom" secondItem="geP-zP-C35" secondAttribute="bottom" constant="617" id="96C-mt-Fhq"/>
+                            <constraint firstItem="E1D-Bf-1co" firstAttribute="leading" secondItem="f2p-WO-9Uu" secondAttribute="leading" constant="134" id="Jzd-QW-VJp"/>
+                            <constraint firstItem="geP-zP-C35" firstAttribute="top" secondItem="f2p-WO-9Uu" secondAttribute="top" id="NQ0-JK-Uoi"/>
+                            <constraint firstItem="E1D-Bf-1co" firstAttribute="centerX" secondItem="xzE-Ez-6pE" secondAttribute="centerX" id="aWk-mD-K27"/>
+                            <constraint firstItem="f2p-WO-9Uu" firstAttribute="trailing" secondItem="xzE-Ez-6pE" secondAttribute="trailing" constant="45.5" id="fab-Mi-gMb"/>
+                            <constraint firstItem="rqM-nn-gQb" firstAttribute="top" secondItem="geP-zP-C35" secondAttribute="top" id="iio-o7-0k6"/>
+                            <constraint firstItem="geP-zP-C35" firstAttribute="leading" secondItem="qrI-S2-jFb" secondAttribute="leadingMargin" id="it1-ZQ-3Gj"/>
+                            <constraint firstItem="rqM-nn-gQb" firstAttribute="leading" secondItem="geP-zP-C35" secondAttribute="trailing" constant="30" id="pA0-HF-gHI"/>
+                            <constraint firstItem="f2p-WO-9Uu" firstAttribute="trailing" secondItem="rqM-nn-gQb" secondAttribute="trailing" constant="87" id="qao-JW-4UV"/>
+                            <constraint firstItem="xzE-Ez-6pE" firstAttribute="leading" secondItem="f2p-WO-9Uu" secondAttribute="leading" constant="45.5" id="v9j-me-F2j"/>
+                            <constraint firstItem="xzE-Ez-6pE" firstAttribute="top" secondItem="rqM-nn-gQb" secondAttribute="bottom" constant="30" id="ypF-dR-RXC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="f2p-WO-9Uu"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nSl-6H-j7O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="589.60000000000002" y="-0.44977511244377816"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="eoA-08-0yS">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bAv-8F-XKg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="1qg-Jk-pcj" customClass="ViewController" customModule="guessToWin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1Ra-Zp-Q59">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlL-vG-sXh">
+                                <rect key="frame" x="16" y="214" width="343" height="111"/>
+                                <color key="backgroundColor" red="0.53821243519999995" green="0.53656055650000001" blue="0.5311736266" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="110" id="ByZ-4b-cMG"/>
+                                    <constraint firstAttribute="height" constant="111" id="jTW-Z0-rvL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="49"/>
+                                <state key="normal" title="Easy">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="easy:" destination="1qg-Jk-pcj" eventType="touchUpInside" id="tdN-AZ-yL2"/>
+                                    <segue destination="Cty-sy-d1U" kind="show" id="1az-mO-ZDj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RI9-bn-tqg">
+                                <rect key="frame" x="16" y="360" width="343" height="110"/>
+                                <color key="backgroundColor" red="0.53821243519999995" green="0.53656055650000001" blue="0.5311736266" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="110" id="a1J-dK-a7F"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="49"/>
+                                <state key="normal" title="Medium">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Cty-sy-d1U" kind="show" id="isU-tM-6Cg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HDb-V5-kiB">
+                                <rect key="frame" x="16" y="505" width="343" height="110"/>
+                                <color key="backgroundColor" red="0.53821243519999995" green="0.53656055650000001" blue="0.5311736266" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="110" id="I67-JI-Enz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="49"/>
+                                <state key="normal" title="Hard">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="hard:" destination="1qg-Jk-pcj" eventType="touchUpInside" id="dzR-BG-dDU"/>
+                                    <segue destination="Cty-sy-d1U" kind="show" id="fO9-jk-JqQ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select your Difficulty" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDU-60-GtG">
+                                <rect key="frame" x="20" y="58" width="335" height="135"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="135" id="AEl-fR-V5H"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="135" id="RJA-qs-8ak"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="335" id="oQf-3t-srd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dI-Lv-iYT">
+                                <rect key="frame" x="20" y="20" width="59" height="30"/>
+                                <color key="backgroundColor" red="0.53821243519999995" green="0.53656055650000001" blue="0.5311736266" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="bwY-4J-L0Y"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.51321160789999998" green="0.7568597198" blue="0.45877158639999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="5dI-Lv-iYT" firstAttribute="top" secondItem="9Ja-NJ-JmH" secondAttribute="top" id="25T-p8-GhD"/>
+                            <constraint firstItem="9Ja-NJ-JmH" firstAttribute="trailing" secondItem="5dI-Lv-iYT" secondAttribute="trailing" constant="296" id="5k8-jB-8TZ"/>
+                            <constraint firstItem="HDb-V5-kiB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hlL-vG-sXh" secondAttribute="leading" id="Drn-Qk-6Q2"/>
+                            <constraint firstItem="hlL-vG-sXh" firstAttribute="centerX" secondItem="YDU-60-GtG" secondAttribute="centerX" id="Ffl-bi-rNe"/>
+                            <constraint firstItem="HDb-V5-kiB" firstAttribute="top" secondItem="RI9-bn-tqg" secondAttribute="bottom" constant="35" id="HrY-Vt-MSe"/>
+                            <constraint firstItem="hlL-vG-sXh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="RI9-bn-tqg" secondAttribute="leading" id="Lmh-rc-d3w"/>
+                            <constraint firstItem="RI9-bn-tqg" firstAttribute="top" secondItem="hlL-vG-sXh" secondAttribute="bottom" constant="35" id="YXr-LW-TYl"/>
+                            <constraint firstItem="hlL-vG-sXh" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="HDb-V5-kiB" secondAttribute="trailing" id="Z5S-eB-mMP"/>
+                            <constraint firstItem="hlL-vG-sXh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1Ra-Zp-Q59" secondAttribute="leadingMargin" id="gCZ-1N-gXp"/>
+                            <constraint firstItem="YDU-60-GtG" firstAttribute="top" secondItem="9Ja-NJ-JmH" secondAttribute="top" constant="38" id="hwm-YB-BvY"/>
+                            <constraint firstItem="HDb-V5-kiB" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hlL-vG-sXh" secondAttribute="trailing" id="koI-FN-Xdv"/>
+                            <constraint firstItem="YDU-60-GtG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9Ja-NJ-JmH" secondAttribute="leading" id="mlb-b9-eCV"/>
+                            <constraint firstItem="hlL-vG-sXh" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="RI9-bn-tqg" secondAttribute="trailing" id="mn4-4d-8bp"/>
+                            <constraint firstItem="5dI-Lv-iYT" firstAttribute="leading" secondItem="YDU-60-GtG" secondAttribute="leading" id="nas-hH-W3e"/>
+                            <constraint firstItem="HDb-V5-kiB" firstAttribute="trailing" secondItem="RI9-bn-tqg" secondAttribute="trailing" id="ouY-dR-m4z"/>
+                            <constraint firstItem="YDU-60-GtG" firstAttribute="top" secondItem="5dI-Lv-iYT" secondAttribute="bottom" constant="8" symbolic="YES" id="raI-Sf-Smx"/>
+                            <constraint firstItem="HDb-V5-kiB" firstAttribute="leading" secondItem="1Ra-Zp-Q59" secondAttribute="leadingMargin" id="tLj-3k-DQn"/>
+                            <constraint firstItem="hlL-vG-sXh" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1Ra-Zp-Q59" secondAttribute="trailingMargin" id="tjw-ry-5px"/>
+                            <constraint firstItem="hlL-vG-sXh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HDb-V5-kiB" secondAttribute="leading" id="uCO-7B-nmT"/>
+                            <constraint firstItem="9Ja-NJ-JmH" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YDU-60-GtG" secondAttribute="trailing" id="vq5-m1-zG5"/>
+                            <constraint firstItem="9Ja-NJ-JmH" firstAttribute="bottom" secondItem="HDb-V5-kiB" secondAttribute="bottom" constant="52" id="z9s-E3-xcR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9Ja-NJ-JmH"/>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-167.19999999999999" y="-0.44977511244377816"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="sKX-e2-dzT">
+            <objects>
+                <viewController id="79n-94-SPH" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hDX-sJ-CB5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PuR-Lo-Y2X">
+                                <rect key="frame" x="16" y="20" width="59" height="30"/>
+                                <color key="backgroundColor" red="0.53821243519999995" green="0.53656055650000001" blue="0.5311736266" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="0r4-Oj-9hx"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" - First, select your difficulty: Easy (0-50), Meduim (0-100), and Hard (0-200)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nNF-f0-BzL">
+                                <rect key="frame" x="16" y="100" width="343" height="117"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" - Then, Type in the ....." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgK-e4-dqn">
+                                <rect key="frame" x="16" y="260" width="343" height="117"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" - Finally, click the ....." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Omg-PG-f4d">
+                                <rect key="frame" x="16" y="449" width="343" height="117"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.51321160789999998" green="0.7568597198" blue="0.45877158639999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="wmg-QD-KdL" firstAttribute="bottom" secondItem="nNF-f0-BzL" secondAttribute="bottom" constant="450" id="Hwc-9H-wbj"/>
+                            <constraint firstItem="nNF-f0-BzL" firstAttribute="trailing" secondItem="hDX-sJ-CB5" secondAttribute="trailingMargin" id="OYb-r4-dTV"/>
+                            <constraint firstItem="wmg-QD-KdL" firstAttribute="trailing" secondItem="PuR-Lo-Y2X" secondAttribute="trailing" constant="300" id="Put-t6-eWj"/>
+                            <constraint firstItem="PuR-Lo-Y2X" firstAttribute="leading" secondItem="hDX-sJ-CB5" secondAttribute="leadingMargin" id="R5w-xT-LeS"/>
+                            <constraint firstItem="nNF-f0-BzL" firstAttribute="top" secondItem="PuR-Lo-Y2X" secondAttribute="bottom" constant="50" id="ThT-ZY-9Id"/>
+                            <constraint firstItem="wmg-QD-KdL" firstAttribute="bottom" secondItem="PuR-Lo-Y2X" secondAttribute="bottom" constant="617" id="VO2-jR-1L3"/>
+                            <constraint firstItem="PuR-Lo-Y2X" firstAttribute="top" secondItem="wmg-QD-KdL" secondAttribute="top" id="bxF-rh-UG1"/>
+                            <constraint firstItem="nNF-f0-BzL" firstAttribute="leading" secondItem="PuR-Lo-Y2X" secondAttribute="leading" id="ywH-8H-aQw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wmg-QD-KdL"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NMi-zG-bl8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-167.19999999999999" y="690.40479760119945"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ImO-EC-0d5"/>
+        <segue reference="fO9-jk-JqQ"/>
+        <segue reference="bwY-4J-L0Y"/>
+    </inferredMetricsTieBreakers>
 </document>

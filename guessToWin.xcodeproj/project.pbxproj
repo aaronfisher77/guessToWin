@@ -12,6 +12,7 @@
 		C82B7BFA216CFD0D0040F3ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C82B7BF8216CFD0D0040F3ED /* Main.storyboard */; };
 		C82B7BFC216CFD0E0040F3ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C82B7BFB216CFD0E0040F3ED /* Assets.xcassets */; };
 		C82B7BFF216CFD0E0040F3ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C82B7BFD216CFD0E0040F3ED /* LaunchScreen.storyboard */; };
+		C89B8AE1216E581100B1FA40 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89B8AE0216E581100B1FA40 /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		C82B7BFB216CFD0E0040F3ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C82B7BFE216CFD0E0040F3ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C82B7C00216CFD0E0040F3ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C89B8AE0216E581100B1FA40 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				C82B7BF4216CFD0D0040F3ED /* AppDelegate.swift */,
 				C82B7BF6216CFD0D0040F3ED /* ViewController.swift */,
+				C89B8AE0216E581100B1FA40 /* Game.swift */,
 				C82B7BF8216CFD0D0040F3ED /* Main.storyboard */,
 				C82B7BFB216CFD0E0040F3ED /* Assets.xcassets */,
 				C82B7BFD216CFD0E0040F3ED /* LaunchScreen.storyboard */,
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C82B7BF7216CFD0D0040F3ED /* ViewController.swift in Sources */,
+				C89B8AE1216E581100B1FA40 /* Game.swift in Sources */,
 				C82B7BF5216CFD0D0040F3ED /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +287,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = guessToWin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -300,6 +305,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = guessToWin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
