@@ -10,21 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var difficultyAndRandomNumber = (difficulty: 0, randomNumber: 0)
+    var difficultyAndRandomNumberAndCounter = (difficulty: 0, randomNumber: 0, counter: 0)
     
     @IBAction func easy(_ sender: Any) {
-        difficultyAndRandomNumber.difficulty = 50
-        difficultyAndRandomNumber.randomNumber = Int.random(in: 0...50)
+        difficultyAndRandomNumberAndCounter.difficulty = 50
+        difficultyAndRandomNumberAndCounter.randomNumber = Int.random(in: 0...50)
+        difficultyAndRandomNumberAndCounter.counter = 10
     }
     
     @IBAction func medium(_ sender: Any) {
-        difficultyAndRandomNumber.difficulty = 100
-        difficultyAndRandomNumber.randomNumber = Int.random(in: 0...100)
+        difficultyAndRandomNumberAndCounter.difficulty = 100
+        difficultyAndRandomNumberAndCounter.randomNumber = Int.random(in: 0...100)
+        difficultyAndRandomNumberAndCounter.counter = 7
     }
     
     @IBAction func hard(_ sender: Any) {
-        difficultyAndRandomNumber.difficulty = 200
-        difficultyAndRandomNumber.randomNumber = Int.random(in: 0...200)
+        difficultyAndRandomNumberAndCounter.difficulty = 200
+        difficultyAndRandomNumberAndCounter.randomNumber = Int.random(in: 0...200)
+        difficultyAndRandomNumberAndCounter.counter = 5
     }
     
     override func viewDidLoad() {
@@ -37,7 +40,7 @@ class ViewController: UIViewController {
         if segue.destination is Game
         {
             let vc = segue.destination as? Game
-            vc?.passedData = difficultyAndRandomNumber
+            vc?.passedData = difficultyAndRandomNumberAndCounter
         }
     }
     
