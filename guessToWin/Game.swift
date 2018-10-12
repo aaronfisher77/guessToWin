@@ -27,7 +27,7 @@ class Game: UIViewController {
     // This override functions allows the screen to load up before the user sees it.
     override func viewDidLoad() {
         super.viewDidLoad()
-        chosenRange.text = String("Guess a number from 0 to \(passedData.randomNumber)") // Tells the used what range to guess from
+        chosenRange.text = String("Guess a number from 0 to \(passedData.difficulty)") // Tells the used what range to guess from
         guessesRemaining.text = ("Guesses Remaining: \(passedData.counter)") // Tells the user how many guesses they will recieve.
         playAgain.isHidden = true
         // Do any additional setup after loading the view.
@@ -41,9 +41,7 @@ class Game: UIViewController {
                 }else if Int(usersGuess.text!) == passedData.randomNumber { // This will check to see if the users number is in fact the number that was randomly chosen at in the ViewController file.
                     InfoButton.text = ("You guessed it Congratulations!")
                     stackView.isHidden = true
-                    playAgain.isHidden = false
-                    
-                
+                    playAgain.isHidden = false // Makes an option appear for the user to play again
             
                 }else if Int(usersGuess.text!)! < passedData.randomNumber &&  passedData.counter >= 1{ // Checks to see if the number you chose is lower than the random number.
                     InfoButton.text = ("Nope, thats to low.")
@@ -60,9 +58,12 @@ class Game: UIViewController {
                     usedCounter += 1 // adds one to the amount of guesses the user has used
                     guessesUsed.text = ("Guesses Used: \(usedCounter)")
                     usersGuess.text = ("") // Sets the user input back to nothing so that the user doesnt have to press bak on their previous guess
+                
                 }else{ // When the user runs out of guesses the text becomes 0 and it prints the text below...
                     usersGuess.text = ("-")
                     InfoButton.text = ("Well thats to Bad you lost")
+                    stackView.isHidden = true
+                    playAgain.isHidden = false
                 }
             }
         }

@@ -30,6 +30,13 @@ class ViewController: UIViewController {
         difficultyAndRandomNumberAndCounter.counter = 5 // Sets number of guesses
     }
     
+    @IBAction func random(_ sender: Any) {
+        difficultyAndRandomNumberAndCounter.difficulty = Int.random(in: 15...500) // Sets difficulty to random nummber
+        difficultyAndRandomNumberAndCounter.randomNumber = Int.random(in: 0...difficultyAndRandomNumberAndCounter.difficulty) // Sets random number 0 - difficultyAndRandomNumberAndCounter.difficulty
+        difficultyAndRandomNumberAndCounter.counter = Int.random(in: 7...12) // Sets number of guesses
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
