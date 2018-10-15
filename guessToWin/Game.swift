@@ -57,30 +57,30 @@ class Game: UIViewController {
                     }
                     
                 }else if Int(usersGuess.text!)! < passedData.randomNumber &&  passedData.counter >= 1{ // Checks to see if the number you chose is lower than the random number.
-                    InfoButton.text = ("Nope, thats to low.")
+                    InfoButton.text = ("Nope, thats too low.")
                     passedData.counter -= 1 // Takes one away from the the Users remaining guesses
-                    guessesRemaining.text = ("Guesses Used: \( passedData.counter)")
+                    guessesRemaining.text = ("Guesses Remianing: \( passedData.counter)")
                     usedCounter += 1 // Adds one to the amount of guesses the user has used
                     guessesUsed.text = ("Guesses Used: \(usedCounter)")
                     usersGuess.text = ("") // Sets the user input back to nothing so that the user doesnt have to press bak on their previous guess
                     
                 }else if Int(usersGuess.text!)! > passedData.randomNumber &&  passedData.counter >= 1{// Checks to see if the number you chose is higher than the random number.
-                    InfoButton.text = ("Nope thats too high")
+                    InfoButton.text = ("Nope, thats too high")
                     passedData.counter -= 1 // Takes one away from the the Users remaining guesses
-                    guessesRemaining.text = ("Guesses Used: \( passedData.counter)")
+                    guessesRemaining.text = ("Guesses Remaining: \( passedData.counter)")
                     usedCounter += 1 // adds one to the amount of guesses the user has used
                     guessesUsed.text = ("Guesses Used: \(usedCounter)")
                     usersGuess.text = ("") // Sets the user input back to nothing so that the user doesnt have to press bak on their previous guess
                     
                 }else{ // When the user runs out of guesses the text becomes 0 and it prints the text below...
                     usersGuess.text = ("-")
-                    InfoButton.text = ("Well thats to Bad you lost")
+                    InfoButton.text = ("Well thats to Bad, you lost.")
                     sleep(2)
                     stackView.isHidden = true
                     playAgain.isHidden = false
                 }
             }else{
-                InfoButton.text = ("Please enter number")
+                InfoButton.text = ("Please enter number.")
             }
     }
 }
