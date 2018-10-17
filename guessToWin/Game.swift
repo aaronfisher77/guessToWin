@@ -21,6 +21,11 @@ class Game: UIViewController {
     @IBOutlet weak var congratulationsKey: UILabel!
     
     
+    @IBAction func backButtonTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     
     // Creates vaiables that allows extra information in the game and sets different aspecs (difficulty, Selecting the random number, and "deciding" how many guesses will be alloted
     var usedCounter: Int = 0
@@ -56,7 +61,7 @@ class Game: UIViewController {
                         self.playAgain.isHidden = false // Makes an option appear for the user to play again
                     }
                     
-                }else if Int(usersGuess.text!)! < passedData.randomNumber &&  passedData.counter >= 1{ // Checks to see if the number you chose is lower than the random number.
+                }else if Int(usersGuess.text!)! < passedData.randomNumber &&  passedData.counter > 1{ // Checks to see if the number you chose is lower than the random number.
                     InfoButton.text = ("Nope, thats too low.")
                     passedData.counter -= 1 // Takes one away from the the Users remaining guesses
                     guessesRemaining.text = ("Guesses Remianing: \( passedData.counter)")
@@ -64,7 +69,7 @@ class Game: UIViewController {
                     guessesUsed.text = ("Guesses Used: \(usedCounter)")
                     usersGuess.text = ("") // Sets the user input back to nothing so that the user doesnt have to press bak on their previous guess
                     
-                }else if Int(usersGuess.text!)! > passedData.randomNumber &&  passedData.counter >= 1{// Checks to see if the number you chose is higher than the random number.
+                }else if Int(usersGuess.text!)! > passedData.randomNumber &&  passedData.counter > 1{// Checks to see if the number you chose is higher than the random number.
                     InfoButton.text = ("Nope, thats too high")
                     passedData.counter -= 1 // Takes one away from the the Users remaining guesses
                     guessesRemaining.text = ("Guesses Remaining: \( passedData.counter)")
@@ -73,11 +78,17 @@ class Game: UIViewController {
                     usersGuess.text = ("") // Sets the user input back to nothing so that the user doesnt have to press bak on their previous guess
                     
                 }else{ // When the user runs out of guesses the text becomes 0 and it prints the text below...
-                    usersGuess.text = ("-")
-                    InfoButton.text = ("Well thats to Bad, you lost.")
-                    sleep(2)
-                    stackView.isHidden = true
-                    playAgain.isHidden = false
+                   
+                    let sleepFor: UInt64 = 4 * 1_000_000_000
+                    
+                    usersGuess.text = ("")
+                    InfoButton.text = ("I'm sorry, the correct number was \(self.passedData.randomNumber).")
+                    
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime(uptimeNanoseconds: DispatchTime.now().uptimeNanoseconds + sleepFor)) { // sleeps for  3 second
+                        self.stackView.isHidden = true
+                        self.playAgain.isHidden = false
+                    }
+
                 }
             }else{
                 InfoButton.text = ("Please enter number.")

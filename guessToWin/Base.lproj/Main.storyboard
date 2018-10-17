@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Title ScreenVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="guessToWin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TitleScreenVC" customModule="guessToWin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,7 +65,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="79n-94-SPH" kind="show" id="Uay-zW-XLO"/>
+                                            <segue destination="79n-94-SPH" kind="show" id="LZm-My-fuu"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -113,7 +113,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="1qg-Jk-pcj" kind="show" id="ImO-EC-0d5"/>
+                                    <action selector="backButtonTapped:" destination="Cty-sy-d1U" eventType="touchUpInside" id="KdP-gk-Gdn"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess - To - Win" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="rqM-nn-gQb">
@@ -206,7 +206,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="1qg-Jk-pcj" kind="show" id="oC0-zF-qdV"/>
+                                    <segue destination="1qg-Jk-pcj" kind="show" id="JOO-Qy-fnG"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulations! You Win!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="6yb-Aq-aP4">
@@ -261,7 +261,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nSl-6H-j7O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="924" y="-0.44977511244377816"/>
+            <point key="canvasLocation" x="151" y="0.0"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="eoA-08-0yS">
@@ -286,7 +286,7 @@
                                         </state>
                                         <connections>
                                             <action selector="easy:" destination="1qg-Jk-pcj" eventType="touchUpInside" id="tdN-AZ-yL2"/>
-                                            <segue destination="Cty-sy-d1U" kind="show" id="1az-mO-ZDj"/>
+                                            <segue destination="Cty-sy-d1U" kind="show" identifier="EasyToGame" id="1az-mO-ZDj"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RI9-bn-tqg">
@@ -301,7 +301,7 @@
                                         </state>
                                         <connections>
                                             <action selector="medium:" destination="1qg-Jk-pcj" eventType="touchUpInside" id="apS-fL-glX"/>
-                                            <segue destination="Cty-sy-d1U" kind="show" id="isU-tM-6Cg"/>
+                                            <segue destination="Cty-sy-d1U" kind="show" identifier="MediumToGame" id="isU-tM-6Cg"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HDb-V5-kiB">
@@ -316,7 +316,7 @@
                                         </state>
                                         <connections>
                                             <action selector="hard:" destination="1qg-Jk-pcj" eventType="touchUpInside" id="dzR-BG-dDU"/>
-                                            <segue destination="Cty-sy-d1U" kind="show" id="fO9-jk-JqQ"/>
+                                            <segue destination="Cty-sy-d1U" kind="show" identifier="HardToGame" id="fO9-jk-JqQ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4o-PO-baW">
@@ -330,9 +330,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="hard:" destination="1qg-Jk-pcj" eventType="touchUpInside" id="GPk-4a-CHd"/>
-                                            <action selector="random:" destination="1qg-Jk-pcj" eventType="touchUpInside" id="pkP-NE-gfB"/>
-                                            <segue destination="Cty-sy-d1U" kind="show" id="s98-1e-a3k"/>
+                                            <segue destination="Cty-sy-d1U" kind="show" identifier="RandomToGame" id="s98-1e-a3k"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -350,7 +348,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="bwY-4J-L0Y"/>
+                                    <action selector="BackToTitleScreen:" destination="1qg-Jk-pcj" eventType="touchUpInside" id="bTZ-l1-MQk"/>
+                                    <segue destination="tlR-dJ-dmO" kind="unwind" identifier="BackToTitleScreen" unwindAction="unwindTitleScreenVCWithSegue:" id="J1l-Y2-LlP"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select your Difficulty" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDU-60-GtG">
@@ -379,13 +378,14 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bAv-8F-XKg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="tlR-dJ-dmO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-167.19999999999999" y="-0.44977511244377816"/>
+            <point key="canvasLocation" x="-545" y="0.0"/>
         </scene>
-        <!--View Controller-->
+        <!--How To PlayVC-->
         <scene sceneID="sKX-e2-dzT">
             <objects>
-                <viewController id="79n-94-SPH" sceneMemberID="viewController">
+                <viewController id="79n-94-SPH" customClass="HowToPlayVC" customModule="guessToWin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hDX-sJ-CB5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -431,7 +431,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="0r4-Oj-9hx"/>
+                                    <segue destination="guN-5m-Qh6" kind="unwind" identifier="BackToTitleScreen" unwindAction="unwindTitleScreenVCWithSegue:" id="6tP-0i-Guv"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -457,13 +457,14 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NMi-zG-bl8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="guN-5m-Qh6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-167" y="843"/>
+            <point key="canvasLocation" x="-1274" y="823"/>
         </scene>
-        <!--View Controller-->
+        <!--StatisticsVC-->
         <scene sceneID="iQm-vP-Bo9">
             <objects>
-                <viewController id="n5t-Mk-wFW" sceneMemberID="viewController">
+                <viewController id="n5t-Mk-wFW" customClass="StatisticsVC" customModule="guessToWin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8cn-BD-4gP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -474,17 +475,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="highlightedColor" red="0.42636587370000001" green="1" blue="0.38765657879999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTI-9V-D72">
-                                <rect key="frame" x="16" y="20" width="59" height="31"/>
-                                <color key="backgroundColor" red="0.53821243519999995" green="0.53656055650000001" blue="0.5311736266" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="MTI-9V-D72" secondAttribute="height" multiplier="59:31" id="2mm-EF-IqL"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
-                                <state key="normal" title="Back">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="SdI-5Y-UKu">
                                 <rect key="frame" x="137" y="468" width="99.5" height="139.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -557,6 +547,21 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTI-9V-D72">
+                                <rect key="frame" x="16" y="20" width="59" height="31"/>
+                                <color key="backgroundColor" red="0.53821243519999995" green="0.53656055650000001" blue="0.5311736266" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="MTI-9V-D72" secondAttribute="height" multiplier="59:31" id="2mm-EF-IqL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="BackToTitleScreen:" destination="n5t-Mk-wFW" eventType="touchUpInside" id="QY0-Ri-175"/>
+                                    <segue destination="PO8-Tk-rRw" kind="unwind" identifier="BackToTitleScreen" unwindAction="unwindTitleScreenVCWithSegue:" id="mxr-JA-C7e"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.51321160789999998" green="0.7568597198" blue="0.45877158639999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -570,13 +575,13 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9xf-NW-hF4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="PO8-Tk-rRw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-167.19999999999999" y="-730.88455772113946"/>
+            <point key="canvasLocation" x="-1274" y="-667"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="LoO-xh-hFW"/>
-        <segue reference="s98-1e-a3k"/>
-        <segue reference="bwY-4J-L0Y"/>
+        <segue reference="isU-tM-6Cg"/>
     </inferredMetricsTieBreakers>
 </document>

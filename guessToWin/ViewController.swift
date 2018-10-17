@@ -10,6 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBAction func backButtonTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func BackToTitleScreen(_ sender: Any) {
+        performSegue(withIdentifier: "BackToTitleScreen", sender: self)
+    }
+    
     var difficultyAndRandomNumberAndCounter = (difficulty: 0, randomNumber: 0, counter: 0) //Creates a tuple that will pass through the difficulty, random number, and counter.
     
     @IBAction func easy(_ sender: Any) { // This will set the requirements that will make easy...easy.
@@ -30,12 +37,6 @@ class ViewController: UIViewController {
         difficultyAndRandomNumberAndCounter.counter = 5 // Sets number of guesses
     }
     
-    @IBAction func random(_ sender: Any) {
-        difficultyAndRandomNumberAndCounter.difficulty = Int.random(in: 15...500) // Sets difficulty to random nummber
-        difficultyAndRandomNumberAndCounter.randomNumber = Int.random(in: 0...difficultyAndRandomNumberAndCounter.difficulty) // Sets random number 0 - difficultyAndRandomNumberAndCounter.difficulty
-        difficultyAndRandomNumberAndCounter.counter = Int.random(in: 7...12) // Sets number of guesses
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,11 +45,15 @@ class ViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        if segue.destination is Game // Sets the destination of the information
-        {
-            let vc = segue.destination as? Game
-            vc?.passedData = difficultyAndRandomNumberAndCounter
+        guard let gameViewController = segue.destination as? Game else { return }
+        
+        if segue.identifier! == "RandomToGame" {
+            difficultyAndRandomNumberAndCounter.difficulty = Int.random(in: 15...500) // Sets difficulty to random nummber
+            difficultyAndRandomNumberAndCounter.randomNumber = Int.random(in: 0...difficultyAndRandomNumberAndCounter.difficulty) // Sets random number 0 - difficultyAndRandomNumberAndCounter.difficulty
+            difficultyAndRandomNumberAndCounter.counter = Int.random(in: 7...12) // Sets number of guesses
         }
+        
+        gameViewController.passedData = difficultyAndRandomNumberAndCounter
     }
     
    
