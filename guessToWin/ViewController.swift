@@ -55,8 +55,7 @@ class ViewController: UIViewController {
         
         gameViewController.passedData = difficultyAndRandomNumberAndCounter
     }
-    
-   
-    
+
+
 }
 
